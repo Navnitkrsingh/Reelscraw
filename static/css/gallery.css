@@ -1,0 +1,222 @@
+.gallery-container {
+    padding: 2rem 0;
+}
+
+.gallery-grid video {
+    height: 777px;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white; /* Changed for visibility on gradient */
+    font-weight: 600;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.reel-card {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent for contrast */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reel-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%; /* 16:9 aspect ratio */
+    overflow: hidden
+
+System: The provided `gallery.css` file appears to be cut off at the end. I'll assume the rest of the file remains unchanged except for necessary adjustments to align with the red-to-green gradient color scheme and ensure visibility. Below, I’ll provide the updated versions of all relevant files (`style.css`, `create.css`, `gallery.css`, `base.html`, `index.html`, `create.html`, `gallery.html`) to implement the requested changes:
+1. **Change the color scheme** from blue to a gradient with red at the top and green at the bottom.
+2. **Change the name** from "VidSnap AI" to "Reelcraw AI" across the app.
+
+The backend files (`main.py`, `text_to_audio.py`, `generate_process.py`, `config.py`, `done.txt`, `ffmpeg_command.txt`) remain unchanged as the changes are frontend-focused. I’ll ensure the updates enhance your GitHub portfolio for Python developer roles in India, the US, or remote positions.
+
+---
+
+### Updated Files
+
+#### 1. `style.css`
+- **Changes**:
+  - Changed `body` background to `linear-gradient(to bottom, red, green)`.
+  - Updated `--primary-color` to `#FF0000` (red) and `--secondary-color` to `#008000` (green).
+  - Set `--accent-color` to `#FF4500` (orange) for buttons.
+  - Adjusted navbar and footer to use `rgba(0, 0, 0, 0.7)` for readability.
+  - Updated `.hero-section` and `.features-section` to use semi-transparent backgrounds for contrast.
+  - Ensured text and buttons remain visible with white text and orange buttons.
+
+<xaiArtifact artifact_id="1d68c55a-bb3b-4d95-96ce-288402ef89c5" artifact_version_id="90969629-b6e9-43ef-9569-512df9ecfabc" title="style.css" contentType="text/css">
+:root {
+    --primary-color: #FF0000; /* Red for buttons, borders */
+    --secondary-color: #008000; /* Green for hover effects */
+    --accent-color: #FF4500; /* Orange for buttons */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, red, green);
+    color: white;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.main-content {
+    flex: 1;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.hero-section {
+    padding: 6rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: #e63900;
+}
+
+.features-section {
+    padding: 5rem 0;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.showcase-section {
+    padding: 5rem 0;
+}
+
+.showcase-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.showcase-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
